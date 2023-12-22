@@ -253,7 +253,7 @@ function updateNewsPeriodically() {
     // Schedule periodic updates
     setInterval(() => {
         fetchAndUpdateNews("india");
-    }, 15000); // 15 seconds in milliseconds
+    }, 45000); // 15 seconds in milliseconds
 }
 
 // Call the function to start periodic updates
