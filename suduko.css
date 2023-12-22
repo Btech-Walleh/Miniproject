@@ -7,10 +7,11 @@
   
   html,
   body {
-    background-color: rgb(235, 235, 240);
+    background-color:#ada1a1;
   }
   
   table {
+    
     border: 2px solid #000000;
     border-spacing: 0;
     border-collapse: collapse;
@@ -42,7 +43,7 @@
   }
   
   input:disabled {
-    background-color: #bbdefb;
+    background-color: #cccaca;
   }
   
   tr:nth-child(3n) {
@@ -76,7 +77,7 @@
   /*Material Design*/
   
   .app-bar {
-    background: #49599a;
+    background: #030303;
     width: 100%;
     position: fixed;
     height: 64px;
@@ -84,6 +85,7 @@
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14);
     z-index: 5;
     top: 0;
+   
   }
   
   .bar-button {
@@ -96,7 +98,9 @@
     padding: 0 22px;
     transition: all 0.5s;
   }
-  
+  .material-icons{
+    font-size: 18px;
+  }
   .bar-button span {
     line-height: 64px;
     display: inline-block;
@@ -117,6 +121,7 @@
     position: relative;
     float: left;
     left: 18px;
+    
   }
   
   .more-button {
@@ -162,7 +167,7 @@
   
   .nav-head {
     height: 172px;
-    background: #5e92f3;
+    background: #000000;
     position: relative;
   }
   
@@ -235,11 +240,13 @@
   }
   
   .card {
+    border-radius: 12px;
     background: #fff;
     width: fit-content;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.14);
     float: left;
     padding: 32px 32px 16px 32px;
+    margin-left: 160px;
   }
   
   .status {
@@ -333,7 +340,7 @@
   }
   
   .timer {
-    color: #1565c0;
+    color: #000000;
     font-size: 32px;
     padding: 4px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.14);
@@ -365,7 +372,7 @@
   }
   
   .remain-cell-header {
-    background-color: #1565c0;
+    background-color:#000000;
     color: white;
     font-weight: bold;
     border-bottom: solid 2px rgba(0, 0, 0, 0.2);
@@ -389,13 +396,16 @@
   }
   
   .floating-btn {
+    font-size: larger;
     position: fixed;
-    bottom: 48px;
-    right: 48px;
+    width: 90px;
+    height: 90px;
+    bottom: 38px;
+    right: 100px;
     border-radius: 50%;
     padding: 12px;
     border: none;
-    background-color: #1565c0;
+    background-color: #0e0e0e;
     color: #fff;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14);
     outline: none;
