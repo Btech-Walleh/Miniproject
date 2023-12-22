@@ -429,3 +429,11 @@ h4{
   }
 }
 }
+
+/* menu mind games css */
+#mindGames{
+  background-color: transparent;
+  border: none;
+  /* z-index: 100; */
+}
+
