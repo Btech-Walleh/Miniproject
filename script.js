@@ -203,5 +203,11 @@ const searchTerm = "world";
     }
 
     // Initial render
-    showSlides();
-    
+    showSlides();    
+// dropdown
+// Add this to your existing JavaScript code
+function toggleDropdown() {
+  var dropdownContent = document.getElementById("dropdownContent");
+  dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
+}
+
