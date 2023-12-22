@@ -19,13 +19,7 @@ body {
   color: black;
   background-color: #EAEAEA;
 }
-.nav-item{
-  color: white;
 
-  margin-top: 5px;
-  font-size: 18px;
-  margin-bottom: -10px;
-}
 p {
   font-family: "Roboto", sans-serif;
   color: var(--secondary-text-color);
@@ -209,7 +203,7 @@ main {
   width: 100%;
   background: rgba(0, 0, 0, 0.7);
   /* Semi-transparent background for better text readability */
-  padding: 10px;
+  padding:12px;
   box-sizing: border-box;
   color: #fff;
   text-align: left;
@@ -435,13 +429,6 @@ h4{
   }
 }
 }
-
-/* menu mind games css */
-#mindGames{
-  background-color: transparent;
-  border: none;
-  /* z-index: 100; */
-}
 /* nav drop down */
 
 .nav-item {
@@ -454,7 +441,7 @@ h4{
   position: absolute;
   background-color: #191a1c;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  z-index: 300;
 }
 
 .dropdown-content a {
@@ -471,6 +458,7 @@ h4{
 .nav-item:hover .dropdown-content {
   display: block;
 }
+
 /* breaking news  */
 /* Add this style for the Breaking News section */
 /* Add this to your existing CSS file or style tag */
@@ -534,4 +522,5 @@ h4{
 
   }
 }
+/* Adjust the styling based on your design */
 
