@@ -216,48 +216,59 @@ function toggleDropdown() {
 
 
 
+ async function fetchAndUpdateNews(query) {
+        try {
+            const response = await fetch(`${url}${query}&apiKey=${API_KEY}`);
+            const data = await response.json();
 
-// Function to fetch news and update li content
-async function fetchAndUpdateNews(query) {
-    try {
-        const response = await fetch(`${url}${query}&apiKey=${API_KEY}`);
-        const data = await response.json();
+            // Check if news articles are available
+            if (data.articles && data.articles.length > 0) {
+                // Get the news container and the ul element
+                const newsContainer = document.getElementById("news-list");
 
-        // Check if news articles are available
-        if (data.articles && data.articles.length > 0) {
-            // Get the news container and the ul element
-            const newsContainer = document.getElementById("news-list");
-            
-            // Clear existing li elements
-            newsContainer.innerHTML = "";
+                // Clear existing li elements
+                newsContainer.innerHTML = "";
 
-            // Iterate through the articles and create li elements
-            data.articles.forEach(article => {
-                const li = document.createElement("li");
-                li.textContent = article.title;
-                newsContainer.appendChild(li);
-            });
-        } else {
-            console.error("No news articles found.");
+                // Iterate through the articles and create li elements
+                data.articles.forEach(article => {
+                    const li = document.createElement("li");
+                    li.textContent = article.title;
+                    newsContainer.appendChild(li);
+                });
+            } else {
+                console.error("No news articles found.");
+            }
+        } catch (error) {
+            console.error("Error fetching news:", error);
         }
-    } catch (error) {
-        console.error("Error fetching news:", error);
     }
-}
 
-// Function to update news every 15 seconds
-function updateNewsPeriodically() {
-    // Initial news update
-    fetchAndUpdateNews("indian-politics");
+    // Function to update news every 15 seconds with a different category after 45 seconds
+    function updateNewsPeriodically() {
+        // Initial news update with the "technology" category
+        fetchAndUpdateNews("technology");
 
-    // Schedule periodic updates
-    setInterval(() => {
-        fetchAndUpdateNews("india");
-    }, 45000); // 15 seconds in milliseconds
-}
+        // Schedule periodic updates every 15 seconds
+        setInterval(() => {
+            fetchAndUpdateNews("technology");
+        }, 15000); // 15 seconds in milliseconds
 
-// Call the function to start periodic updates
-updateNewsPeriodically();
+        // Schedule a change in news category after 45 seconds
+        setTimeout(() => {
+            // Change the news category to "sports" after 45 seconds
+            fetchAndUpdateNews("sports");
+
+            // Schedule subsequent periodic updates with the new category
+            setInterval(() => {
+                fetchAndUpdateNews("sports");
+            }, 15000); // 15 seconds in milliseconds
+        }, 45000); // 45 seconds in milliseconds
+    }
+
+    // Call the function to start periodic updates
+    updateNewsPeriodically();
+
+
 
 
 
