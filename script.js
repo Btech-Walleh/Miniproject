@@ -211,3 +211,53 @@ function toggleDropdown() {
   dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
 }
 
+// breaking news 
+
+
+
+
+
+// Function to fetch news and update li content
+async function fetchAndUpdateNews(query) {
+    try {
+        const response = await fetch(`${url}${query}&apiKey=${API_KEY}`);
+        const data = await response.json();
+
+        // Check if news articles are available
+        if (data.articles && data.articles.length > 0) {
+            // Get the news container and the ul element
+            const newsContainer = document.getElementById("news-list");
+            
+            // Clear existing li elements
+            newsContainer.innerHTML = "";
+
+            // Iterate through the articles and create li elements
+            data.articles.forEach(article => {
+                const li = document.createElement("li");
+                li.textContent = article.title;
+                newsContainer.appendChild(li);
+            });
+        } else {
+            console.error("No news articles found.");
+        }
+    } catch (error) {
+        console.error("Error fetching news:", error);
+    }
+}
+
+// Function to update news every 15 seconds
+function updateNewsPeriodically() {
+    // Initial news update
+    fetchAndUpdateNews("indian-politics");
+
+    // Schedule periodic updates
+    setInterval(() => {
+        fetchAndUpdateNews("india");
+    }, 15000); // 15 seconds in milliseconds
+}
+
+// Call the function to start periodic updates
+updateNewsPeriodically();
+
+
+
