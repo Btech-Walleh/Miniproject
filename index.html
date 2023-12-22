@@ -36,8 +36,16 @@
                     <li class="hover-link nav-item" id="movie" onclick="onNavItemClick('bollywood')">Movies</li>
                     <li class="hover-link nav-item" style="text-decoration: none;" ><a href="Newpaper.html " style="text-decoration: none; color: white;">NewsPaper</a></li>
                     <!-- <li class="hover-link nav-item" ><a href="quiz.html">Quiz</a></li> -->
-                    <li class="hover-link nav-item" style="text-decoration: none;"><a href="quiz.html" style="text-decoration: none; color: white;">Quiz</a></li>
-                    <li class="hover-link nav-item" style="text-decoration: none;"><a href="suduko.html" style="text-decoration: none; color: white;">Suduko</a></li>
+                  <!-- <li class="hover-link nav-item"><a href="quiz.html">Quiz</a></li> -->
+
+                    <li class="hover-link nav-item" id="dropdown" onclick="toggleDropdown()"><span
+                            class="Categories">Games</span>
+                        <ul class="dropdown-content" id="dropdownContent">
+                            <li><a href="quiz.html">Quiz</a></li>
+                            <li><a href="suduko.html">Suduko</a></li>
+
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div class="search-bar flex">
