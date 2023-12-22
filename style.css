@@ -442,4 +442,34 @@ h4{
   border: none;
   /* z-index: 100; */
 }
+/* nav drop down */
+
+.nav-item {
+  list-style-type: none; /* Remove the dot */
+   /* Change the text color */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #191a1c;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #555;
+}
+
+.nav-item:hover .dropdown-content {
+  display: block;
+}
+
 
