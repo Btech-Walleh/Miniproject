@@ -11,12 +11,22 @@ const _categorySelect = document.getElementById('category-select');
 let correctAnswer = "", correctScore = pageNumber = 0, totalQuestion = 10;
 
 async function loadQuestion() {
+    showLoader(); // Display loader while fetching question
+
     const categoryParam = _categorySelect.value === "" ? "" : `&category=${_categorySelect.value}`;
     const APIUrl = `https://opentdb.com/api.php?amount=1${categoryParam}`;
-    const result = await fetch(APIUrl);
-    const data = await result.json();
-    _result.innerHTML = "";
-    showQuestion(data.results[0]);
+    
+    try {
+        const result = await fetch(APIUrl);
+        const data = await result.json();
+        _result.innerHTML = "";
+        showQuestion(data.results[0]);
+    } catch (error) {
+        _question.innerHTML = 'Please Wait loading question...';
+        console.error('Error fetching question:', error);
+        // Automatically call loadQuestion again after a delay
+        setTimeout(loadQuestion, 2000); // Adjust the delay as needed
+    }
 }
 
 function eventListeners() {
@@ -50,6 +60,11 @@ function showQuestion(data) {
         `).join('')}
     `;
     selectOption();
+}
+
+function showLoader() {
+    _question.innerHTML = 'Loading...';
+    _options.innerHTML = ''; // Clear options while loading
 }
 
 function selectOption() {
@@ -101,7 +116,7 @@ function checkCount() {
         setTimeout(function () {
             loadQuestion();
             _nextBtn.disabled = false;
-        }, 100);
+        }, 1000); // Adjust the delay as needed
     }
 }
 
