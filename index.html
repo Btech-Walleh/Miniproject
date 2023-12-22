@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Newpaper.html">
     <title>MOJ</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
-
 </head>
+
 <body>
 
     <nav>
         <div class="main-nav container flex">
-          
-          <div class="ani">  <div class="main-animation">
-                <h4> News-Website<div class="roller">
-                  <span id="rolltext">News<br/>
-                  Games<br/>
-                  NewsPaper<br/>
-                  <span id="spare-time">News</br> Quiz</br> Weather </br> Enjoy...</span><br/>
-                  </div>
-                  </h4>
-                  
+
+            <div class="ani">
+                <div class="main-animation">
+                    <h4> News-Website<div class="roller">
+                            <span id="rolltext">News<br />
+                                Games<br />
+                                NewsPaper<br />
+                                <span id="spare-time">News</br> Quiz</br> Weather </br> Enjoy...</span><br />
+                        </div>
+                    </h4>
+
                 </div>
             </div>
             <div class="nav-links">
                 <ul class="flex">
-                    <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">Sports</li>
-                    <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('technology')">Technology</li>
-                    <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('indian-politics')">Politics</li>
-                    <li class="hover-link nav-item" id="movie" onclick="onNavItemClick('bollywood')">Movies</li>
-                    <li class="hover-link nav-item" style="text-decoration: none;" ><a href="Newpaper.html " style="text-decoration: none; color: white;">NewsPaper</a></li>
-                    <!-- <li class="hover-link nav-item" ><a href="quiz.html">Quiz</a></li> -->
-                  <!-- <li class="hover-link nav-item"><a href="quiz.html">Quiz</a></li> -->
+                    <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">Sports
+
+
+                    </li>
+                    <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('technology')">technology</li>
+                    <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('indian-politics')">Politics
+                    </li>
+                    <li class="hover-link nav-item" id="movie" onclick="onNavItemClick('bollywood')">Movie</li>
+                    <li class="hover-link nav-item"><a href="Newpaper.html ">NewsPaper</a></li>
+                    <!-- <li class="hover-link nav-item"><a href="quiz.html">Quiz</a></li> -->
 
                     <li class="hover-link nav-item" id="dropdown" onclick="toggleDropdown()"><span
                             class="Categories">Games</span>
@@ -52,11 +56,13 @@
                 <input id="search-text" type="text" class="news-input" placeholder="e.g. Science">
                 <button id="search-button" class="search-button">Search</button>
             </div>
-            <div>   <div class="weather-container" id="weather-container"></div></div>
+            <div>
+                <div class="weather-container" id="weather-container"></div>
+            </div>
         </div>
     </nav>
-    
-     <div class="news-container">
+    <!-- Block news  -->
+    <div class="news-container">
         <div class="title">
             Breaking News
         </div>
@@ -65,53 +71,59 @@
             <!-- News items will be dynamically added here -->
         </ul>
     </div>
- <!-- Slider -->
+    
+    <!-- Slider -->
     <div class="lol">
-     
+
         <div class="slider-container">
             <div id="slider" class="slider"></div>
             <div class="slider-nav">
-              <button onclick="prevSlide()">Previous</button>
-              <button onclick="nextSlide()">Next</button>
+                <button onclick="prevSlide()">Previous</button>
+                <button onclick="nextSlide()">Next</button>
             </div>
-    </div>
-    <div id="loader" class="loader">Loading...</div>
-    <main>
-        <div class="cards-container container flex" id="cards-container">
-            
         </div>
-    </main>
-<template id="template-news-card">
-    <div class="card">
-        <div class="card-header">
-            <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
-        </div>
-        <div class="card-content">
-            <h3 id="news-title">This is the Title</h3>
-            <h6 class="news-source" id="news-source">End Gadget 26/08/2023</h6>
-            <p class="news-desc" id="news-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae saepe quis voluptatum quisquam vitae doloremque facilis molestias quae ratione cumque!</p>
-          
-            <div class="like-dislike-container">
-                <div class="like" onclick="handleLike(this)"> 
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAp9JREFUSEutVoFx4zAMAzeJJ/lkkraTxJ7k20mSTZJNVFOkZEim3Pz1fZdLYskCCYCkBeElAJKv8O949493gyP0Vr229f8A9kPYDfAoe0Hy/D0g+zoD+QNA7kB6AtDP8UVHtBt3yTJYXXwH8LdDUNCLgr/C1yBjQc4yxMQZglu1gGVcPPEB4JPF29iiXf5EQI0Ds0529kmARwmoZAjg4VuX9Xv+BXAYywkp06sZaxBK692Brv7EBMiT2dqd1Gj8WvXcqpkEy6rD7CWn2Z6ysQRTLwFTzarsNY6doZmqofTSLC+umAI+/HdHc6N9V7MqJV27Os435B1IxcHq3IkeUT2vCixIU8rlxP5ovdJj8X+tS9XL65OiFjyRGlBdfEBwqvZnM7bi3gH5EqRP7odli9M2qH/BBSk3Ct7gwINnuNBsi7KVmwxRnc3i7pTFAf5Q9tLTCCTqXjG4y1dc73Xeamx62c4SkGtY/bg/fdTp2p2FpmU9eVZp2FwRyCHwYRW2AW3A3mAM2NxLVP9DxkGH6BoIe8dLrmQ8AjZarq531rgz19hV20rI2q+oPrSTLVpvt9/LCjbXwUM5kLlEPLMu2lbVUTvkBrMedHXgZnIpQhnypvHLrh4HQSs3Ac7W0TD1ZiwBzlt0o4yD1rSzdr0RmGrjgjIGAaPcz1Q3kywUtjWd/2OZaseyx4d13GbMwCNfB/eTV0E/WPbAmWorrUtWXvCGVMehDv4ScFxVG7rSnCfaWoPLeubcvy1TA8kTSYf91lMCWsmMTU3HTOS3ER2XQZupnSuv2auNvVG0l
-                    zFhYAEKL9OD5fVoAMxZ2qE0j0M3dQMvzFffVBr6RuV0zHEgwKiSXmmsXE6j1HyGDFneaTJ6l942Sq3XQ0kP3TYM95jAb7g5EDVjlIp/AAAAAElFTkSuQmCC"/>
+        <div id="loader" class="loader">Loading...</div>
+        <main>
+            <div class="cards-container container flex" id="cards-container">
+
+            </div>
+        </main>
+        <template id="template-news-card">
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
                 </div>
-              
-                &nbsp;<hr>&nbsp;
+                <div class="card-content">
+                    <h3 id="news-title">This is the Title</h3>
+                    <h6 class="news-source" id="news-source">End Gadget 26/08/2023</h6>
+                    <p class="news-desc" id="news-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        Recusandae saepe quis voluptatum quisquam vitae doloremque facilis molestias quae ratione
+                        cumque!</p>
 
-                <div class="dislike" onclick="handleDislike(this)">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAohJREFUSEudV4F14zAI/WzibNJucp0k9iTNTeLcJMkmqpCQBDKy1fN77UsdBPzPB1TC7EMAgmM8en/hl/S59nkuSrJqv2qomVzYZvwcnDouZ2wGRF2R/TEymEEmZ98A+EcegqG6C8ABd36nQf1XafKhLfpas7Ps0z75iwXA64iUQAiOxi6wt8xvBfmoxmsMf5fsNgKeRdAjQakkE0sgPBDwV97vwtsXgEf62s+VXkBg1FyX20wtlU3OkbBFahgAPyXvLYJZuRUyYuu50WwPX4mw+DkPzHWWkFY9+Yu7RKk1yX8rZYhAch9XsfLnhk6CFAsCtmi/+uKqmgtvEG7FyPrOSTShGdENA8dDWdkVcSNxAeElOUs9HIbPi/77wNHfGhrNruInhFbY3yIrq9ShS6YMkGPvmmb3VTVMQQWxgVONHapXAu5y6hPA81rGXUfkJo+kJS+1nqadvMBqaAwGi0Xpj1IKIroWuKnQFZduo7MZbnrHYUXV2BkgDuI/AL7LmGwOR7WkBxDUxqm0lxpzqf6JnzIXOsRNXHucsYts95k+yrOvDZMFwVsu1VUtYT8yGTVnx2Pz6klzXBnJqHUZYvSM9umsRX/TdtHVuqQtQi1LgP3tAfjot5CzC+qrfkkctoYKbuY4AW/ZCDsQ5KaSav9lbg9O9NE+NkBV2/DlgMfqG4Fu0q86GaaUZ4B97G7JaehePFVyFh3vaT0c9PWI0eua+9FVMzpUu63akLWt9ZLeYaHx7aKbds4a9QJfLIDc54mneqEuqD7
-                    T9cinz6G93EDOpGf/e8g1tvb1HtW9P23H347GhYAlt00CzpfA52yttIbOl8EMdee41Fg7Mn56tL9nXRhf95FY/AAtphYzeQaXnwAAAABJRU5ErkJggg=="/>
-                </div> 
-                
+                    <div class="like-dislike-container">
+                        <div class="like" onclick="handleLike(this)">
+                            <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAp9JREFUSEutVoFx4zAMAzeJJ/lkkraTxJ7k20mSTZJNVFOkZEim3Pz1fZdLYskCCYCkBeElAJKv8O949493gyP0Vr229f8A9kPYDfAoe0Hy/D0g+zoD+QNA7kB6AtDP8UVHtBt3yTJYXXwH8LdDUNCLgr/C1yBjQc4yxMQZglu1gGVcPPEB4JPF29iiXf5EQI0Ds0529kmARwmoZAjg4VuX9Xv+BXAYywkp06sZaxBK692Brv7EBMiT2dqd1Gj8WvXcqpkEy6rD7CWn2Z6ysQRTLwFTzarsNY6doZmqofTSLC+umAI+/HdHc6N9V7MqJV27Os435B1IxcHq3IkeUT2vCixIU8rlxP5ovdJj8X+tS9XL65OiFjyRGlBdfEBwqvZnM7bi3gH5EqRP7odli9M2qH/BBSk3Ct7gwINnuNBsi7KVmwxRnc3i7pTFAf5Q9tLTCCTqXjG4y1dc73Xeamx62c4SkGtY/bg/fdTp2p2FpmU9eVZp2FwRyCHwYRW2AW3A3mAM2NxLVP9DxkGH6BoIe8dLrmQ8AjZarq531rgz19hV20rI2q+oPrSTLVpvt9/LCjbXwUM5kLlEPLMu2lbVUTvkBrMedHXgZnIpQhnypvHLrh4HQSs3Ac7W0TD1ZiwBzlt0o4yD1rSzdr0RmGrjgjIGAaPcz1Q3kywUtjWd/2OZaseyx4d13GbMwCNfB/eTV0E/WPbAmWorrUtWXvCGVMehDv4ScFxVG7rSnCfaWoPLeubcvy1TA8kTSYf91lMCWsmMTU3HTOS3ER2XQZupnSuv2auNvVG0l
+                    zFhYAEKL9OD5fVoAMxZ2qE0j0M3dQMvzFffVBr6RuV0zHEgwKiSXmmsXE6j1HyGDFneaTJ6l942Sq3XQ0kP3TYM95jAb7g5EDVjlIp/AAAAAElFTkSuQmCC" />
+                        </div>
+
+                        &nbsp;
+                        <hr>&nbsp;
+
+                        <div class="dislike" onclick="handleDislike(this)">
+                            <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAohJREFUSEudV4F14zAI/WzibNJucp0k9iTNTeLcJMkmqpCQBDKy1fN77UsdBPzPB1TC7EMAgmM8en/hl/S59nkuSrJqv2qomVzYZvwcnDouZ2wGRF2R/TEymEEmZ98A+EcegqG6C8ABd36nQf1XafKhLfpas7Ps0z75iwXA64iUQAiOxi6wt8xvBfmoxmsMf5fsNgKeRdAjQakkE0sgPBDwV97vwtsXgEf62s+VXkBg1FyX20wtlU3OkbBFahgAPyXvLYJZuRUyYuu50WwPX4mw+DkPzHWWkFY9+Yu7RKk1yX8rZYhAch9XsfLnhk6CFAsCtmi/+uKqmgtvEG7FyPrOSTShGdENA8dDWdkVcSNxAeElOUs9HIbPi/77wNHfGhrNruInhFbY3yIrq9ShS6YMkGPvmmb3VTVMQQWxgVONHapXAu5y6hPA81rGXUfkJo+kJS+1nqadvMBqaAwGi0Xpj1IKIroWuKnQFZduo7MZbnrHYUXV2BkgDuI/AL7LmGwOR7WkBxDUxqm0lxpzqf6JnzIXOsRNXHucsYts95k+yrOvDZMFwVsu1VUtYT8yGTVnx2Pz6klzXBnJqHUZYvSM9umsRX/TdtHVuqQtQi1LgP3tAfjot5CzC+qrfkkctoYKbuY4AW/ZCDsQ5KaSav9lbg9O9NE+NkBV2/DlgMfqG4Fu0q86GaaUZ4B97G7JaehePFVyFh3vaT0c9PWI0eua+9FVMzpUu63akLWt9ZLeYaHx7aKbds4a9QJfLIDc54mneqEuqD7
+                    T9cinz6G93EDOpGf/e8g1tvb1HtW9P23H347GhYAlt00CzpfA52yttIbOl8EMdee41Fg7Mn56tL9nXRhf95FY/AAtphYzeQaXnwAAAABJRU5ErkJggg==" />
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
-            
-        </div>
-    </div>
-</template>
+        </template>
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="script.js"></script>
-    <!-- <script src="slider.js"></script> -->
+        <script src="script.js"></script>
+        <!-- <script src="slider.js"></script> -->
 </body>
+
 </html>
