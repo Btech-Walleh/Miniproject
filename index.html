@@ -71,7 +71,20 @@
             <!-- News items will be dynamically added here -->
         </ul>
     </div>
-    
+
+
+
+
+    <!-- latest-News Block -->
+    <div class="latest-news-container">
+        <div class="latest-news-heading">
+            Latest News
+        </div>
+        <div id="latest-news-list">
+            <!-- Latest news items will be dynamically added here -->
+        </div>
+    </div>
+
     <!-- Slider -->
     <div class="lol">
 
@@ -82,13 +95,16 @@
                 <button onclick="nextSlide()">Next</button>
             </div>
         </div>
-        <div id="loader" class="loader">Loading...</div>
-        <main>
+        <div id="loader" class="loader-container">
+            <div class="loader"></div>
+        </div>
+        
+           <main>
             <div class="cards-container container flex" id="cards-container">
 
             </div>
-        </main>
-        <template id="template-news-card">
+          </main>
+          <template id="template-news-card">
             <div class="card">
                 <div class="card-header">
                     <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
@@ -119,7 +135,7 @@
                     </div>
 
                 </div>
-            </div>
+            
         </template>
 
         <script src="script.js"></script>
