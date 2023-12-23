@@ -3,85 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="hindu.css">
-  
-    <title>The Hindustan Times</title>
+
+    <title>hindustan_times</title>
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 1;
+    margin: 5px;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+/* Existing CSS styles remain unchanged */
+
+.date {
+    margin-top: 8px;
+    font-size: 23px;
+    color: #555;
+    pointer-events: none; 
+    
+}
+a{
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit the color from the parent */
+    cursor: pointer;
+    
+}
+
+    </style>
 </head>
 <body>
 
-    <div id="maindiv">
-
-        <div >
-            <div class="border_news">
-                <a href="HT DELHI - 23 December 2023 - QuantSenseiMain on telegram.pdf" target="_blank"><img src="news.webp" alt="Newspaper Image" id="newsimg" ></a>
-
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <a href="HT DELHI - 23 December 2023 - QuantSenseiMain on telegram.pdf">
+                    <img src="https://cdn.pixabay.com/photo/2013/07/12/19/16/newspaper-154444_1280.png" alt="Newspaper 1">
+                </a>
+                <p class="date">December 23, 2023</p>
             </div>
-            <div>
-                <h5 id="date_label">Date :- 23 December 2023 </h5>
+            <div class="column">
+                <a href="HT DELHI - 22 December 2023 - QuantSenseiMain on telegram.pdf">
+                    <img src="https://cdn.pixabay.com/photo/2013/07/12/19/16/newspaper-154444_1280.png" alt="Newspaper 2">
+                </a>
+                <p class="date">December 22, 2023</p>
             </div>
-        </div>
-
-        <div >
-            <div class="border_news">
-                <a href="HT DELHI - 22 December 2023 - QuantSenseiMain on telegram.pdf" target="_blank"><img src="news.webp" alt="Newspaper Image" id="newsimg" ></a>
-
-            </div>
-            <div>
-                <h5 id="date_label">Date :- 22 December 2023 </h5>
-            </div>
-        </div>
-
-        <div >
-            <div class="border_news">
-                <a href="HT DELHI - 21 December 2023 - QuantSenseiMain on telegram.pdf" target="_blank"><img src="news.webp" alt="Newspaper Image" id="newsimg" ></a>
-
-            </div>
-            <div>
-                <h5 id="date_label">Date :- 21 December 2023 </h5>
+            <div class="column">
+                <a href="HT DELHI - 21 December 2023 - QuantSenseiMain on telegram.pdf">
+                    <img src="https://cdn.pixabay.com/photo/2013/07/12/19/16/newspaper-154444_1280.png" alt="Newspaper 3">
+                </a>
+                <p class="date">December 21, 2023</p>
             </div>
         </div>
-
-        <div >
-            <div class="border_news">
-                <a href="HT DELHI - 20 December 2023 - QuantSenseiMain on telegram.pdf" target="_blank"><img src="news.webp" alt="Newspaper Image" id="newsimg" ></a>
-
+        <div class="row">
+            <div class="column">
+                <a href="HT DELHI - 20 December 2023 - QuantSenseiMain on telegram.pdf">
+                    <img src="https://cdn.pixabay.com/photo/2013/07/12/19/16/newspaper-154444_1280.png" alt="Newspaper 4">
+                </a>
+                <p class="date">December 20, 2023</p>
             </div>
-            <div>
-                <h5 id="date_label">Date :- 20 December 2023 </h5>
+            <div class="column">
+                <a href="HT DELHI - 19 December 2023 - QuantSenseiMain on telegram.pdf">
+                    <img src="https://cdn.pixabay.com/photo/2013/07/12/19/16/newspaper-154444_1280.png" alt="Newspaper 5">
+                </a>
+                <p class="date">December 19, 2023</p>
             </div>
-        </div>
-
-        <div >
-            <div class="border_news">
-                <a href="HT DELHI - 19 December 2023 - QuantSenseiMain on telegram.pdf" target="_blank"><img src="news.webp" alt="Newspaper Image" id="newsimg" ></a>
-
-            </div>
-            <div>
-                <h5 id="date_label">Date :- 19 December 2023 </h5>
-            </div>
-        </div>
-
-        <div >
-            <div class="border_news">
-                <a href="HT DELHI - 18 December 2023 - QuantSenseiMain on telegram.pdf" target="_blank"><img src="news.webp" alt="Newspaper Image" id="newsimg" ></a>
-
-            </div>
-            <div>
-                <h5 id="date_label">Date :- 18 December 2023 </h5>
+            <div class="column">
+                <a href="HT DELHI - 18 December 2023 - QuantSenseiMain on telegram.pdf">
+                    <img src="https://cdn.pixabay.com/photo/2013/07/12/19/16/newspaper-154444_1280.png" alt="Newspaper 6">
+                </a>
+                <p class="date">December 18, 2023</p>
             </div>
         </div>
     </div>
 
-
-
-
-
-
-    <br><br>
-        
-       <h1>Coming Soon</h1>
-
-
-
 </body>
+
 </html>
