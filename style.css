@@ -110,6 +110,10 @@ nav {
   font-family: "Roboto", sans-serif;
 }
 
+.search-button{
+  width:500px:
+}
+
 .search-button:hover {
   background-color: var(--accent-color-dark);
 }
