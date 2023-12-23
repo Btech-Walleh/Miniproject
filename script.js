@@ -1,4 +1,5 @@
 const API_KEY = "4c09099ee1d946678d267ca844a06b51";
+// const API_KEY = "d8531774a5cd485cbbc21e391e1081a1";
 const url = "https://newsapi.org/v2/everything?q=";
 const API_KEY_WEATHER = "b01d0eca8e8afb063844c673bfe52529";
 
@@ -43,13 +44,13 @@ window.addEventListener("load", () => {
 
 // Function to show and hide the loader
 function showLoader() {
-  const loader = document.getElementById("loader");
-  loader.style.display = "flex"; // Set to "flex" to use flexbox for centering
+    const loader = document.getElementById("loader");
+    loader.style.display = "flex"; // Set to "flex" to use flexbox for centering
 }
 
 function hideLoader() {
-  const loader = document.getElementById("loader");
-  loader.style.display = "none";
+    const loader = document.getElementById("loader");
+    loader.style.display = "none";
 }
 
 // Modify your fetchNews function to call these functions
@@ -70,7 +71,7 @@ async function fetchNews(query) {
 // Function to fetch news articles and update the slider
 async function fetchNews(query) {
     showLoader();
-  
+
     try {
         const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
         const data = await res.json();
@@ -80,7 +81,7 @@ async function fetchNews(query) {
     } finally {
         hideLoader();
     }
-  }
+}
 
 
 // Function to bind news data to HTML template
@@ -193,13 +194,13 @@ getNews().then(showSlides);
 let intervalId; // Declare a variable to store the interval ID
 
 function showSlides(news) {
-  slider.innerHTML = "";
+    slider.innerHTML = "";
 
-  news.forEach((article, index) => {
-      const slide = document.createElement("div");
-      slide.classList.add("slide");
+    news.forEach((article, index) => {
+        const slide = document.createElement("div");
+        slide.classList.add("slide");
 
-      const content = `
+        const content = `
           <div class="slide-content">
               <h3>${article.title}</h3>
               <p>${article.description}</p>
@@ -208,29 +209,29 @@ function showSlides(news) {
           <img src="${article.urlToImage}" alt="${article.title}">
       `;
 
-      slide.innerHTML = content;
+        slide.innerHTML = content;
 
-      // Add an error event listener to the image element
-      const image = slide.querySelector("img");
-      image.addEventListener("error", () => {
-          // If an error occurs (image not loaded), move to the next slide
-          nextSlide();
-      });
+        // Add an error event listener to the image element
+        const image = slide.querySelector("img");
+        image.addEventListener("error", () => {
+            // If an error occurs (image not loaded), move to the next slide
+            nextSlide();
+        });
 
-      slider.appendChild(slide);
-  });
+        slider.appendChild(slide);
+    });
 
-  // Reset the current slide to the first one
-  currentSlide = 0;
-  updateSlider();
+    // Reset the current slide to the first one
+    currentSlide = 0;
+    updateSlider();
 
-  // Clear the existing interval (if any)
-  clearInterval(intervalId);
+    // Clear the existing interval (if any)
+    clearInterval(intervalId);
 
-  // Set a new interval for auto-scrolling the slider
-  intervalId = setInterval(() => {
-      nextSlide();
-  }, 5000);
+    // Set a new interval for auto-scrolling the slider
+    intervalId = setInterval(() => {
+        nextSlide();
+    }, 5000);
 }
 
 
@@ -252,6 +253,8 @@ function updateSlider() {
 getNews().then(showSlides);
 
 // dropdown
+
+
 // Add this to your existing JavaScript code
 function toggleDropdown() {
     var dropdownContent = document.getElementById("dropdownContent");
@@ -350,3 +353,55 @@ function displayLatestNews(newsArticles) {
 
 // Fetch latest news when the page loads
 document.addEventListener('DOMContentLoaded', fetchLatestNews);
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Top-news-Container
+// Function to fetch news related to Uttar Pradesh
+async function fetchStateNews() {
+    try {
+        const response = await fetch(`${url}Uttar Pradesh&apiKey=${API_KEY}`);
+        const data = await response.json();
+
+        console.log("State News API Response:", data); // Log the response data
+
+        // Display the state news
+        displayStateNews(data.articles);
+    } catch (error) {
+        console.error('Error fetching state news:', error);
+    }
+}
+
+// Function to display state news
+function displayStateNews(newsArticles) {
+    const stateNewsContainer = document.getElementById('state-news-list');
+
+    // Clear existing content
+    stateNewsContainer.innerHTML = '';
+
+    // Display the state news items
+    newsArticles.slice(0, 6).forEach((article) => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+
+        a.href = article.url;
+        a.target = '_blank';
+        a.textContent = article.title;
+
+        li.appendChild(a);
+        stateNewsContainer.appendChild(li);
+    });
+}
+
+// Fetch state news when the page loads
+document.addEventListener('DOMContentLoaded', fetchStateNews);
