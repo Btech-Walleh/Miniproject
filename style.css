@@ -296,6 +296,34 @@ a {
 }
 
 /* like */
+
+
+
+
+
+.btn-like{
+  cursor: pointer;
+  outline: 0;
+  color: #AAA;
+padding:12px;
+ border-radius:12px;
+ border-width:0;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.green{
+  color: green;
+}
+
+.red{
+  color: red;
+}
+.btn-like:hover{
+  background:#7c7c7c;
+}
 .loader-container {
   display: none;
   position: fixed;
