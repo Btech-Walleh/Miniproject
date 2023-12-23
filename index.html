@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Newpaper.html">
-    <title>News Website</title>
+    <title>MOJ</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
@@ -29,18 +29,17 @@
 
                 </div>
             </div>
-            <div class="search-bar flex">
-                <input id="search-text" type="text" class="news-input" placeholder="Search Anything">
-                <button id="search-button" class="search-button">Search</button>
-            </div>
-            
             <div class="nav-links">
                 <ul class="flex">
+                    <div class="search-bar flex">
+                        <input id="search-text" type="text" class="news-input" placeholder="Search Anything" style="width: 400px;">
+                        <button id="search-button" class="search-button">Search</button>
+                    </div>
                     <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">Sports
 
 
                     </li>
-                    <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('technology')">technology</li>
+                    <!-- <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('technology')">technology</li> -->
                     <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('indian-politics')">Politics
                     </li>
                     <li class="hover-link nav-item" id="movie" onclick="onNavItemClick('bollywood')">Movie</li>
@@ -57,7 +56,7 @@
                     </li>
                 </ul>
             </div>
-            
+          
             <div>
                 <div class="weather-container" id="weather-container"></div>
             </div>
@@ -97,6 +96,27 @@
                 <button onclick="nextSlide()">Next</button>
             </div>
         </div>
+
+
+
+        <!-- TOP-NEWS-CONTAINER  -->
+
+        <div class="latest-news-container" id="state-news-container">
+            <h2 class="latest-news-heading">Uttar Pradesh News</h2>
+            <ul id="state-news-list"></ul>
+        </div>
+        
+
+
+
+
+
+
+
+
+
+<!-- LOADER CONTAINER -->
+
         <div id="loader" class="loader-container">
             <div class="loader"></div>
         </div>
