@@ -110,10 +110,6 @@ nav {
   font-family: "Roboto", sans-serif;
 }
 
-.search-button{
-  width:500px:
-}
-
 .search-button:hover {
   background-color: var(--accent-color-dark);
 }
@@ -208,7 +204,7 @@ main {
   width: 100%;
   background: rgba(0, 0, 0, 0.7);
   /* Semi-transparent background for better text readability */
-  padding:9px;
+  padding: 9px;
   box-sizing: border-box;
   color: #fff;
   text-align: left;
@@ -323,19 +319,26 @@ a {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.like:hover{
+.like:hover {
   background-color: rgb(159, 210, 249);
 }
-.dislike:hover{
+
+.dislike:hover {
   background-color: #df2e63;
 }
-.like-dislike-container{
+
+.like-dislike-container {
   display: flex;
-  justify-content:flex-start;
+  justify-content: flex-start;
 }
 
 
@@ -348,116 +351,128 @@ a {
 /* @keyframes headerAnimation {
   from {
     transform: translateY(-10px); /* Adjust the initial position */
-  /* }
+/* }
   to {
     transform: translateY(10px); /* Adjust the final position */
- 
-.ani{
+
+
+/* drop-down */
+.ani {
   margin-left: 10px;
 }
-.main-animation{
 
-  height:70px;
-  width:100%;  
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
+.main-animation {
+
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
-h4{
+
+h4 {
   padding-top: 50px;
-  text-align:center;
+  text-align: center;
   text-transform: uppercase;
-  color: rgb(235, 171, 52); 
+  color: rgb(235, 171, 52);
   /* font-size: 4rem; */
 }
 
-.roller{
+.roller {
   height: 4.125rem;
   /* line-height: 4rem; */
   position: relative;
-  overflow: hidden; 
+  overflow: hidden;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   color: #da0847;
 }
 
 
-#spare-time{
+#spare-time {
   font-size: 0.8rem;
   font-style: italic;
   /* letter-spacing: 1rem; */
   margin-top: 0;
   color: #A8DADC;
-  
+
 }
 
 .roller #rolltext {
   position: absolute;
 
-  animation: slide 8s infinite ease-in-out;  
+  animation: slide 8s infinite ease-in-out;
 }
 
 @keyframes slide {
-  0%{
-    top:0;
+  0% {
+    top: 0;
   }
-  25%{
-    top: -4rem;    
+
+  25% {
+    top: -4rem;
   }
-  50%{
+
+  50% {
     top: -8rem;
   }
-  72.5%{
+
+  72.5% {
     top: -12.25rem;
   }
 }
 
-@media screen and (max-width: 600px){
-  h4{
-  text-align:center;
-  text-transform: uppercase;
-  color: #F1FAEE; 
-  font-size: 2.125rem;
-}
-  
-  .roller{
-  height: 2.6rem; 
-  line-height: 2.125rem;  
+@media screen and (max-width: 600px) {
+  h4 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #F1FAEE;
+    font-size: 2.125rem;
   }
-  
+
+  .roller {
+    height: 2.6rem;
+    line-height: 2.125rem;
+  }
+
   #spare-time {
     font-size: 1rem;
     letter-spacing: 0.1rem;
   }
-  
-  .roller #rolltext {  
-  animation: slide-mob 5s infinite;  
-}
-  
+
+  .roller #rolltext {
+    animation: slide-mob 5s infinite;
+  }
+
   @keyframes slide-mob {
-  0%{
-    top:0;
-  }
-  25%{
-    top: -2.125rem;    
-  }
-  50%{
-    top: -4.25rem;
-  }
-  72.5%{
-    top: -6.375rem;
+    0% {
+      top: 0;
+    }
+
+    25% {
+      top: -2.125rem;
+    }
+
+    50% {
+      top: -4.25rem;
+    }
+
+    72.5% {
+      top: -6.375rem;
+    }
   }
 }
-}
+
 /* nav drop down */
 
 .nav-item {
-  list-style-type: none; /* Remove the dot */
-   /* Change the text color */
+  list-style-type: none;
+  /* Remove the dot */
+  /* Change the text color */
 }
 
 .dropdown-content {
@@ -488,14 +503,16 @@ h4{
 /* Add this to your existing CSS file or style tag */
 .news-container {
   position: fixed;
-  top: 85px; /* Adjust the top value based on your navigation height */
+  top: 85px;
+  /* Adjust the top value based on your navigation height */
   left: 0;
   right: 0;
   font-family: "Roboto", sans-serif;
   box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.3);
-  background-color: #fff; /* Set the background color as needed */
-  z-index: 1; 
-  
+  background-color: #fff;
+  /* Set the background color as needed */
+  z-index: 1;
+
 }
 
 .news-container .title {
@@ -523,8 +540,9 @@ h4{
   color: #494949;
   position: relative;
 }
+
 .news-container ul li::after {
-  content:"";
+  content: "";
   width: 1px;
   height: 100%;
   background: #b8b8b8;
@@ -536,16 +554,18 @@ h4{
 .news-container ul li:last-child::after {
   display: none;
 }
+
 @keyframes scroll {
   from {
-      transform: translateX(100%);
+    transform: translateX(100%);
   }
 
   to {
-      transform: translateX(-1083px);
+    transform: translateX(-1083px);
 
   }
 }
+
 /* Adjust the styling based on your design */
 
 /* latestnews block */
@@ -554,14 +574,16 @@ h4{
 /* Additional styles for the modified Latest News block */
 .latest-news-container {
   width: 250px;
-  margin-top: 140px;/* Adjust the top value based on your navigation height */
+  margin-top: 140px;
+  /* Adjust the top value based on your navigation height */
   margin-right: 20px;
   font-family: "Roboto", sans-serif;
-  background-color: #fff; /* Set the background color as needed */
+  background-color: #f4f4f4;
+  /* Set the background color as needed */
   box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.3);
   padding: 10px;
   border-radius: 8px;
-  position:absolute;
+  position: absolute;
 }
 
 .latest-news-heading {
@@ -592,3 +614,64 @@ h4{
 
 
 /* Add this style to adjust the spacing between the Latest News block and the slider */
+/* TOP-NEWS-RIGHT */
+
+
+/* Add this CSS for the state-news-container */
+#state-news-container {
+  background-color: #f4f4f4;
+  /* Set background color */
+  padding: 10px;
+  /* Add padding for spacing */
+  margin-top: -30.4em;
+  /* Adjust margin as needed */
+  right: -8px;
+}
+
+/* Add this CSS for the state-news-heading */
+#state-news-container .latest-news-heading {
+  font-size: 24px;
+  /* Set font size */
+  color: #333;
+  /* Set text color */
+  margin-bottom: 10px;
+  /* Add margin for spacing */
+}
+
+/* Add this CSS for the state-news-list */
+/* Add this CSS for the state-news-list items */
+#state-news-list li {
+  margin-bottom: 10px;
+  /* Add margin between news items */
+  border-bottom: 1px solid #ddd;
+  /* Add a border between news items */
+  padding-bottom: 10px;
+  /* Add padding below each news item */
+}
+
+/* Add this CSS for the state-news-list links */
+#state-news-list a {
+  text-decoration: none;
+  /* Remove underline from links */
+  color: #0066cc;
+  /* Set link color */
+  font-weight: bold;
+  /* Set font weight */
+  font-size: 16px;
+  /* Set font size */
+  display: block;
+  /* Make links block-level for better spacing */
+}
+
+/* Add this CSS for the state-news-list link hover effect */
+#state-news-list a:hover {
+  color: #004080;
+  /* Set link color on hover */
+}
+
+
+/* Add this CSS for the state-news-list link hover effect */
+#state-news-list a:hover {
+  color: #004080;
+  /* Set link color on hover */
+}
