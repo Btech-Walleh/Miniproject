@@ -405,3 +405,41 @@ function displayStateNews(newsArticles) {
 
 // Fetch state news when the page loads
 document.addEventListener('DOMContentLoaded', fetchStateNews);
+//  like button
+
+var btn1 = document.querySelector('#green');
+var btn2 = document.querySelector('#red');
+
+btn1.addEventListener('click', function() {
+
+    if (btn2.classList.contains('red')) {
+        btn2.classList.remove('red');
+    }
+    this.classList.toggle('green');
+
+});
+
+btn2.addEventListener('click', function() {
+
+    if (btn1.classList.contains('green')) {
+        btn1.classList.remove('green');
+    }
+    this.classList.toggle('red');
+
+});
+
+// explorer
+
+// Add this to your existing script.js file or create a new one
+
+function toggleExplorerOptions() {
+    var explorerOptions = document.getElementById('explorerOptions');
+    explorerOptions.style.display = explorerOptions.style.display === 'block' ? 'none' : 'block';
+}
+
+function onExplorerOptionClick(option) {
+    // Handle the click event for each explorer option
+    console.log('Explorer option clicked:', option);
+    // Add your logic here
+}
+
