@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Newpaper.html">
-    <title>MOJ</title>
+    <title>NewsWebsite</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
@@ -15,6 +15,21 @@
 <body>
 
     <nav>
+        <!-- Inside the nav section, before the main-nav div -->
+        <div class="explorer" onclick="toggleExplorerOptions()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="explorer-options" id="explorerOptions">
+            <!-- Add your explorer options here -->
+            <div class="hover-link nav-item"onclick="onNavItemClick('ipl')">Sports</div>
+            <div class="hover-link nav-item"onclick="onNavItemClick('indian-politics')">Politics</div>
+            <div class="hover-link nav-item" onclick="onNavItemClick('technology')">Technology</div>
+            <div class="hover-link nav-item" onclick="onNavItemClick('science')">Science</div>
+            <div class="hover-link nav-item" onclick="onNavItemClick('world')">World</div>
+        </div>
+
         <div class="main-nav container flex">
 
             <div class="ani">
@@ -23,25 +38,23 @@
                             <span id="rolltext">News<br />
                                 Games<br />
                                 NewsPaper<br />
-                                <span id="spare-time">News</br> Quiz</br> Weather </br> Enjoy...</span><br />
+                                <span id="spare-time">News</br> Quiz</br> Weather </br> Suduko </br> Enjoy...</span><br />
                         </div>
                     </h4>
+
 
                 </div>
             </div>
             <div class="nav-links">
                 <ul class="flex">
                     <div class="search-bar flex">
-                        <input id="search-text" type="text" class="news-input" placeholder="Search Anything" style="width: 400px;">
+                        
+                        <input id="search-text" type="text" class="news-input" placeholder=" &#128269;Search " style="width: 360px;">
                         <button id="search-button" class="search-button">Search</button>
                     </div>
-                    <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">Sports
-
-
-                    </li>
+                    <!-- <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">Sports</li> -->
                     <!-- <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('technology')">technology</li> -->
-                    <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('indian-politics')">Politics
-                    </li>
+                    <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('indian-politics')">Politics </li>
                     <li class="hover-link nav-item" id="movie" onclick="onNavItemClick('bollywood')">Movie</li>
                     <li class="hover-link nav-item"><a href="Newpaper.html ">NewsPaper</a></li>
                     <!-- <li class="hover-link nav-item"><a href="quiz.html">Quiz</a></li> -->
@@ -56,7 +69,7 @@
                     </li>
                 </ul>
             </div>
-          
+
             <div>
                 <div class="weather-container" id="weather-container"></div>
             </div>
@@ -92,8 +105,8 @@
         <div class="slider-container">
             <div id="slider" class="slider"></div>
             <div class="slider-nav">
-                <button onclick="prevSlide()">Previous</button>
-                <button onclick="nextSlide()">Next</button>
+                <button onclick="prevSlide()" style="border-radius: 43px;"><span style="font-size: 24px">&#8592</span></button>
+                <button onclick="nextSlide()" ><span style="font-size: 24px">&#8594;</span></button>
             </div>
         </div>
 
@@ -105,7 +118,6 @@
             <h2 class="latest-news-heading">Uttar Pradesh News</h2>
             <ul id="state-news-list"></ul>
         </div>
-        
 
 
 
@@ -115,18 +127,19 @@
 
 
 
-<!-- LOADER CONTAINER -->
+
+        <!-- LOADER CONTAINER -->
 
         <div id="loader" class="loader-container">
             <div class="loader"></div>
         </div>
-        
-           <main>
+
+        <main>
             <div class="cards-container container flex" id="cards-container">
 
             </div>
-          </main>
-          <template id="template-news-card">
+        </main>
+        <template id="template-news-card">
             <div class="card">
                 <div class="card-header">
                     <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
@@ -138,15 +151,18 @@
                         Recusandae saepe quis voluptatum quisquam vitae doloremque facilis molestias quae ratione
                         cumque!</p>
 
-                 <button class="btn btn-like" id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
-                        <button class="btn btn-like" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
+                    <button class="btn btn-like green" id="green"><i class="fa fa-thumbs-up fa-lg"
+                            aria-hidden="true"></i></button>
+                    <button class="btn btn-like red" id="red"><i class="fa fa-thumbs-down fa-lg"
+                            aria-hidden="true"></i></button>
 
                 </div>
-            
+
         </template>
 
         <script src="script.js"></script>
-                <script src="https://use.fontawesome.com/fe459689b4.js"></script>
+        <script src="https://use.fontawesome.com/fe459689b4.js"></script>
+        <script src="suduko.js"></script>
         <!-- <script src="slider.js"></script> -->
 </body>
 
