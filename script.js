@@ -1,5 +1,10 @@
-const API_KEY = "4c09099ee1d946678d267ca844a06b51";
+// Replace your existing JavaScript code with the following:
+
+// const API_KEY = "4c09099ee1d946678d267ca844a06b51";
 // const API_KEY = "d8531774a5cd485cbbc21e391e1081a1";
+// const API_KEY = "b4288c5679e74ac988b96a74f4bdae49";
+const API_KEY = "da1c0932e298492eae092470c0a2a900";
+// const API_KEY = "e42bb9ac5a04418b8cb1310ff3c9c85b";
 const url = "https://newsapi.org/v2/everything?q=";
 const API_KEY_WEATHER = "b01d0eca8e8afb063844c673bfe52529";
 
@@ -53,36 +58,24 @@ function hideLoader() {
     loader.style.display = "none";
 }
 
-// Modify your fetchNews function to call these functions
+// Combine your fetchNews functions
 async function fetchNews(query) {
     showLoader();
 
-    try {
+    try{
         const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
         const data = await res.json();
-        fetchNewsAndUpdateSlider(query, data.articles);
-    } catch (error) {
-        console.error("Error fetching news:", error);
-    } finally {
-        hideLoader();
-    }
+        // fetchNewsAndUpdateSlider(query, data.articles);
+        bindData(data.articles);}
+        catch(err){console.log('An Error Occured!')}finally{
+
+            hideLoader();
+        }
+  
+    
+    //     
+    
 }
-
-// Function to fetch news articles and update the slider
-async function fetchNews(query) {
-    showLoader();
-
-    try {
-        const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
-        const data = await res.json();
-        bindData(data.articles);
-    } catch (error) {
-        console.error("Error fetching news:", error);
-    } finally {
-        hideLoader();
-    }
-}
-
 
 // Function to bind news data to HTML template
 function bindData(articles) {
@@ -98,6 +91,8 @@ function bindData(articles) {
         cardsContainer.appendChild(cardClone);
     });
 }
+
+
 
 // Function to fill data in news card
 function fillDataInCard(cardClone, article) {
@@ -121,49 +116,24 @@ function fillDataInCard(cardClone, article) {
     });
 }
 
+
 // Variable to keep track of the selected navigation item
 let curSelectedNav = null;
-
-// Function to handle navigation item click
 function onNavItemClick(id) {
     fetchNews(id);
-    updateSliderWithSearch(id);
+    const navItem = document.getElementById(id);
+    curSelectedNav?.classList.remove("active");
+    curSelectedNav = navItem;
+    curSelectedNav.classList.add("active");
 }
 
-async function updateSliderWithSearch(query) {
-    try {
-        const response = await fetch(`${url}${query}&apiKey=${API_KEY}`);
-        const data = await response.json();
-
-        const sliderArticles = data.articles.slice(0, 7);
-        const repeatedSliderArticles = Array.from({ length: 3 }, () => sliderArticles).flat();
-
-        showSlides(repeatedSliderArticles);
-    } catch (error) {
-        console.error("Error fetching news:", error);
-    }
-}
-
-// Search functionality
 const searchButton = document.getElementById("search-button");
 const searchText = document.getElementById("search-text");
 
-searchButton.addEventListener("click", async () => {
+searchButton.addEventListener("click", () => {
     const query = searchText.value;
     if (!query) return;
-
-    try {
-        const response = await fetch(`${url}${query}&apiKey=${API_KEY}`);
-        const data = await response.json();
-
-        const sliderArticles = data.articles.slice(0, 7);
-        const repeatedSliderArticles = Array.from({ length: 3 }, () => sliderArticles).flat();
-
-        showSlides(repeatedSliderArticles);
-    } catch (error) {
-        console.error("Error fetching news:", error);
-    }
-
+    fetchNews(query);
     curSelectedNav?.classList.remove("active");
     curSelectedNav = null;
 });
@@ -171,11 +141,11 @@ searchButton.addEventListener("click", async () => {
 // Slider
 const searchTerm = "world";
 const slider = document.getElementById("slider");
-
+// e42bb9ac5a04418b8cb1310ff3c9c85b
 let currentSlide = 0;
 async function getNews() {
     try {
-        const response = await fetch(`${url}${searchTerm}&apiKey=${API_KEY}`);
+        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${API_KEY}`);
         const data = await response.json();
 
         // Select only 7 articles for the slider
@@ -213,9 +183,14 @@ function showSlides(news) {
 
         // Add an error event listener to the image element
         const image = slide.querySelector("img");
-        image.addEventListener("error", () => {
-            // If an error occurs (image not loaded), move to the next slide
+
+        image.addEventListener("load", () => {
+            // If the image is loaded successfully, move to the next slide
             nextSlide();
+        });
+
+        image.addEventListener("error", () => {
+            // Handle error (optional)
         });
 
         slider.appendChild(slide);
@@ -234,11 +209,11 @@ function showSlides(news) {
     }, 5000);
 }
 
-
 function nextSlide() {
     currentSlide = (currentSlide + 1) % slider.children.length;
     updateSlider();
 }
+
 function prevSlide() {
     currentSlide = (currentSlide - 1) % slider.children.length;
     updateSlider();
@@ -254,11 +229,10 @@ getNews().then(showSlides);
 
 // dropdown
 
-
 // Add this to your existing JavaScript code
 function toggleDropdown() {
     var dropdownContent = document.getElementById("dropdownContent");
-    dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
+    dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
 }
 
 // breaking news
@@ -308,11 +282,13 @@ updateNewsPeriodically();
 // latest-news block
 
 const latestNewsContainer = document.getElementById('latest-news-list');
+// Correct the API endpoint
+const latestNewsUrl = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${API_KEY}`;
 
 // Function to fetch latest news data
 async function fetchLatestNews() {
     try {
-        const response = await fetch(`${url}latest&apiKey=${API_KEY}`);
+        const response = await fetch(latestNewsUrl);
         const data = await response.json();
 
         // Display the latest news
@@ -354,18 +330,6 @@ function displayLatestNews(newsArticles) {
 // Fetch latest news when the page loads
 document.addEventListener('DOMContentLoaded', fetchLatestNews);
 
-
-
-
-
-
-
-
-
-
-
-
-
 // Top-news-Container
 // Function to fetch news related to Uttar Pradesh
 async function fetchStateNews() {
@@ -405,7 +369,8 @@ function displayStateNews(newsArticles) {
 
 // Fetch state news when the page loads
 document.addEventListener('DOMContentLoaded', fetchStateNews);
-//  like button
+
+// like button
 
 var btn1 = document.querySelector('#green');
 var btn2 = document.querySelector('#red');
@@ -442,4 +407,3 @@ function onExplorerOptionClick(option) {
     console.log('Explorer option clicked:', option);
     // Add your logic here
 }
-
