@@ -241,16 +241,19 @@ main {
   background: #111111;
   color: #fff;
   border: none;
-  padding: 15px;
+  padding: 11px;
   cursor: pointer;
-  border-radius: 32px;
+  border-radius: 72px;
   opacity: 0.5;
   margin-left: 5px;
   margin-right: 5px;
+  width: 50px;
 }
 
 .slider-nav button:hover {
   background: #000000;
+  padding-block: 15px;
+  
   /* Change the background color on hover */
 }
 
@@ -300,7 +303,6 @@ a {
 
 
 
-
 .btn-like{
   cursor: pointer;
   outline: 0;
@@ -308,22 +310,25 @@ a {
 padding:12px;
  border-radius:12px;
  border-width:0;
+ 
 }
 
 .btn:focus {
   outline: none;
 }
 
-.green{
-  color: green;
-}
-
-.red{
-  color: red;
-}
 .btn-like:hover{
   background:#7c7c7c;
 }
+
+.green:hover{
+  background-color:rgb(64, 243, 64);
+}
+
+.red:hover{
+  background-color: rgb(252, 50, 50);
+}
+
 .loader-container {
   display: none;
   position: fixed;
@@ -412,7 +417,7 @@ h4 {
   /* line-height: 4rem; */
   position: relative;
   overflow: hidden;
-  width: 100%;
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -506,9 +511,10 @@ h4 {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #191a1c;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #c9cbce;
+  box-shadow: 0 12px 23px rgba(0, 0, 0, 0.2);
   z-index: 300;
+  border-radius: 12px;
 }
 
 .dropdown-content a {
@@ -520,6 +526,7 @@ h4 {
 
 .dropdown-content a:hover {
   background-color: #555;
+  border-radius: 12px;
 }
 
 .nav-item:hover .dropdown-content {
@@ -627,6 +634,7 @@ h4 {
 
 .latest-news-item {
   margin-bottom: 13px;
+  border-bottom: 1px solid #ddd;
 }
 
 .latest-news-item a {
@@ -663,6 +671,7 @@ h4 {
   color: #333;
   /* Set text color */
   margin-bottom: 10px;
+  
   /* Add margin for spacing */
 }
 
@@ -672,8 +681,10 @@ h4 {
   margin-bottom: 10px;
   /* Add margin between news items */
   border-bottom: 1px solid #ddd;
+  color:#2294ed;
   /* Add a border between news items */
   padding-bottom: 10px;
+  
   /* Add padding below each news item */
 }
 
@@ -681,10 +692,8 @@ h4 {
 #state-news-list a {
   text-decoration: none;
   /* Remove underline from links */
-  color: #0066cc;
-  /* Set link color */
-  font-weight: bold;
-  /* Set font weight */
+  color:#2294ed;
+
   font-size: 16px;
   /* Set font size */
   display: block;
@@ -699,7 +708,56 @@ h4 {
 
 
 /* Add this CSS for the state-news-list link hover effect */
-#state-news-list a:hover {
-  color: #004080;
-  /* Set link color on hover */
+
+
+
+/* explorer */
+
+/* Add this to your existing CSS file or style tag */
+
+/* Add this to your existing CSS file or style tag */
+
+/* Add this to your existing CSS file or style tag */
+
+.explorer {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 25px 8px;
+  /* margin-top: 10px; */
+  position:absolute;
+}
+
+.line {
+  width: 30px;
+  height: 2px;
+  background-color: #fff; /* Adjust color as needed */
+  margin: 4px 0;
+
+}
+.line:hover{
+  background-color: #706a6a;
+}
+
+.explorer-options {
+  display: none;
+  position: absolute;
+  top: 51px; /* Adjust top position based on your navigation height */
+  left: 0;
+  background-color: #c9cbce;
+  box-shadow: 0 12px 23px rgba(0, 0, 0, 0.2);
+  z-index: 300;
+  border-radius: 16px;
+}
+
+.explorer-options .nav-item {
+  color: white;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+}
+
+.explorer-options .nav-item:hover {
+  background-color: #555;
+  border-radius: 16px;
 }
